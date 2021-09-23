@@ -2,6 +2,7 @@ const {Sequelize} = require('sequelize');
 
 //Importando modelos
 const User = require('./models/User');
+const Todo = require('./models/toDoList');
 
 //DB conecction
 const sequelize = new Sequelize('taskmanager', 'root', 'root', {
@@ -10,7 +11,7 @@ const sequelize = new Sequelize('taskmanager', 'root', 'root', {
     loggin: false
 });
 
-const models = [ User ];
+const models = [ User, Todo];
 
 //Registrando models en sequelize
 for (let model of models){

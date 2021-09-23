@@ -1,11 +1,11 @@
 const User = require('../models/User');
 const sequelize = require('../db');
-const router = require('../routes');
 
 async function getUsers(req, res) {
     const users = await sequelize.models.User.findAndCountAll();
     return res.status(200).json({data: users});
 }
+
 
 async function createUser(req, res) {
     const { body } = req;
